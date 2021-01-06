@@ -1,9 +1,6 @@
-function deleteMessage(client){
+function deleteMessage(client,logChannel){
     client.on('messageDelete', msg => {
-        console.log(`**Message Deleted**
-        \nAuthor: <@${msg.author.id}>
-        \nChannel: #${msg.channel.name}
-        \nMessage: '${msg.content}'`)
+        client.channels.get(logChannel).send(`**Message Deleted**\n**Author**: <@${msg.author.id}>\n**Channel**: #${msg.channel.name}\n**Message**: '${msg.content}'`)
     });
 }
 

@@ -1,7 +1,6 @@
-function removeUser(client){
+function removeUser(client,logChannel){
     client.on('guildMemberRemove', member => {
-        console.log(`**Leave User**
-        \nUser: <@${member.id}>`)
+        client.channels.get(logChannel).send(`**Leave User**\n**User**: <@${member.id}>`)
     });
 }
 

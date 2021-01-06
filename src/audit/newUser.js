@@ -1,7 +1,6 @@
-function newUser(client){
+function newUser(client,logChannel){
     client.on('guildMemberAdd', member => {
-        console.log(`**New User**
-        \nUser: <@${member.id}>`)
+        client.channels.get(logChannel).send(`**New User**\n**User**: <@${member.id}>`)
     });
 }
 

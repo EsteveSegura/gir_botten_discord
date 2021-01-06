@@ -1,11 +1,7 @@
-function updatedMessaged(client){
-    client.on('guildMemberAdd', (oldMsg,newMsg) => {
-        console.log(`**Message Updated**
-        \nAuthor: <@${oldMsg.author.id}>
-        \nChannel: #${oldMsg.channel.name}
-        \nOldMessage: '${oldMsg.content}'
-        \nNewMessage: '${newMsg.content}'`)
+function updatedMessage(client, logChannel) {
+    client.on('messageUpdate', (oldMsg, newMsg) => {
+        client.channels.get(logChannel).send(`**Message Updated**\n**Author**: <@${oldMsg.author.id}>\n**Channel**: #${oldMsg.channel.name}\n**OldMessage**: '${oldMsg.content}'\n**NewMessage**: '${newMsg.content}'`)
     });
 }
 
-module.exports = updatedMessaged
+module.exports = updatedMessage
