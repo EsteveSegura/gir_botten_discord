@@ -7,8 +7,6 @@ const runCommands = require('./commands/')
 const runAudit = require('./audit/')
 
 client.on('ready', function () {
-  console.log(`Bot ON`);
-
   runAudit(client)
   runCommands(client)
   runBehaviour(client)

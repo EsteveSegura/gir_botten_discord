@@ -1,12 +1,20 @@
-async function deleteCondition(idChannel, msg) {
-    if (msg.channel.id == idChannel && !msg.author.bot) await msg.delete()
+const autoDeleteMessageChannels = [
+    "670952127975391264",
+    "675440617853157406",
+    "622566137795837973"
+]
+
+async function deleteCondition(idChannels, msg) {
+     idChannels.map(async(id) => {
+        if (msg.channel.id == id && !msg.author.bot){
+            await msg.delete()
+        }
+     })
 }
 
 async function onlyBotCanWrite(client) {
     client.on('message', async (msg) => {
-        await deleteCondition("670952127975391264", msg)
-        await deleteCondition("675440617853157406", msg)
-        await deleteCondition("622566137795837973", msg)
+        await deleteCondition(autoDeleteMessageChannels, msg)
     });
 }
 
