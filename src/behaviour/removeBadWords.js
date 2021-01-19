@@ -1,9 +1,8 @@
 const badWords = ["puta","puto","gilipollas","zorra","tonto"];
 
-async function removeBadWords(client){
+function cleanBadVocabulary(client){
     client.on('message', msg =>{
-        console.log(msg.content);
-    
+
         if(badWords.includes(msg.content)){
             msg.delete();
             msg.reply("oye por favor, habla bien maleducado");
@@ -11,4 +10,4 @@ async function removeBadWords(client){
     })
 }
 
-module.exports = removeBadWords
+module.exports = cleanBadVocabulary
