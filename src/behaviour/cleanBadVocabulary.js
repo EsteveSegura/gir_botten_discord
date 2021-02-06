@@ -1,4 +1,4 @@
-const badWords = ["puta","puto","gilipollas","zorra","tonto"];
+const badWords 
 
 function cleanBadVocabulary(client){
     client.on('message', msg =>{
@@ -10,4 +10,4 @@ function cleanBadVocabulary(client){
     })
 }
 
-module.exports = cleanBadVocabulary
+module.exports = {cleanBadVocabulary}
