@@ -9,7 +9,6 @@ function cleanBadVocabulary(client){
         console.log(badWords)
 
         if(badWords.includes(msg.content.toLowerCase())){
-            console.log("Hola tonto")
             msg.delete();
             msg.reply("Oye por favor, habla bien maleducado");
         }
