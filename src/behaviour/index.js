@@ -1,13 +1,12 @@
 const onlyBotCanWrite = require('./onlyBotCanWrite');
 const setRoleOnEnter = require('./setRoleOnEnter');
-const removeBadWords = require('./removeBadWords');
-
+const cleanBadVocabulary = require('./cleanBadVocabulary');
 const basicData = require('../data.json')
 
 function runBehaviour(client) {
     onlyBotCanWrite(client)
     setRoleOnEnter(client,basicData.ROL_USER);
-    removeBadWords(client);
+    cleanBadVocabulary(client);
 }
 
 module.exports = runBehaviour

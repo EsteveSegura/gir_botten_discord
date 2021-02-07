@@ -1,13 +1,19 @@
-const badWords 
+const {readFile} = require('../utils/readFile')
+
+const badWords = readFile('insultos.txt');
 
 function cleanBadVocabulary(client){
     client.on('message', msg =>{
 
-        if(badWords.includes(msg.content)){
+
+        console.log(badWords)
+
+        if(badWords.includes(msg.content.toLowerCase())){
+            console.log("Hola tonto")
             msg.delete();
-            msg.reply("oye por favor, habla bien maleducado");
+            msg.reply("Oye por favor, habla bien maleducado");
         }
     })
 }
 
-module.exports = {cleanBadVocabulary}
+module.exports =  cleanBadVocabulary 
