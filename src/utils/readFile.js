@@ -3,18 +3,9 @@ const fs = require('fs');
 
 function readFile(file) {
 
-  const words =  fs.readFileSync(path.join(__dirname, '..', file), 'utf-8')
-    .toString()
-    .trim()
+  return fs.readFileSync(path.join(__dirname, '..', file), 'utf-8')
+    .toString().toLowerCase()
     .split('\r\n');
-
-    return lowercased = words.map( word => 
-         word.toLowerCase()
-    );
-   
-
-
-
 
 }
 

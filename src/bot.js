@@ -8,7 +8,7 @@ const runAudit = require('./audit/')
 
 
 client.on('ready', function () {
-  //runAudit(client)
+  runAudit(client)
   runCommands(client)
   runBehaviour(client)
 });
