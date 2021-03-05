@@ -10,7 +10,7 @@ async function addTool(msg) {
     try {
         if (allowedChannelIds.includes(msg.channel.id)) {
             const cmd = argsUtils.splitArgs(msg.content, ['-name', '-description', '-url'])
-            await msg.channel.send(`**${cmd.name}**:${cmd.description}${cmd.url} añadido por: <@${msg.author.id}> `)
+            await msg.channel.send(`**${cmd.name}**:${cmd.description}<${cmd.url}> añadido por: <@${msg.author.id}> `)
         }
     } catch (e) {
         console.log(e)
